@@ -112,7 +112,7 @@ if uploaded_file is not None:
                 k = st.sidebar.slider("🔢 Select Number of Clusters", min_value=2, max_value=10, value=3)
 
                 # Apply Hierarchical Clustering
-                hc = AgglomerativeClustering(n_clusters=k, affinity="euclidean", linkage="ward")
+                hc = AgglomerativeClustering(n_clusters=k, linkage="ward")
                 df["Cluster"] = hc.fit_predict(X_scaled)
 
             elif algorithm == "DBSCAN":
